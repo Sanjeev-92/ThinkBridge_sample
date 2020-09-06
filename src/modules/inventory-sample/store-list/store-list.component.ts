@@ -54,6 +54,9 @@ export class StoreListComponent implements OnInit {
   editItem(item:object){ // edit object in list method
    
   }
+  details(items:Object){ //  Go to details page
+    console.log("Item",items);
+  }
   transform(image){
     return this.sanitizer.bypassSecurityTrustResourceUrl(image);
 }
