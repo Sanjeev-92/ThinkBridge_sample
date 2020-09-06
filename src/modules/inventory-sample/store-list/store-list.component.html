@@ -1,0 +1,69 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="row back p-0 pt-3">
+            <div class="col-lg-4" *ngIf="items">
+                    <h4>Items - ({{items.length}})</h4>
+            </div>
+            <div class="col-lg-4">
+                <nav aria-label="...">
+                    <ul class="pagination">
+                      <li class="page-item disabled">
+                        <span class="page-link">Previous</span>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item active">
+                        <span class="page-link">
+                          2
+                          <span class="sr-only">(current)</span>
+                        </span>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                      </li>
+                    </ul>
+                  </nav>
+            </div>
+            <div class="col-lg-4 text-right">
+                <button type="button" class="btn btn-primary btn-sm" (click)="addItem()">Add New</button>
+            </div>
+        </div>
+        <div class="card-deck"> 
+            <div class="row">
+            <ng-container *ngFor="let item of items; let i=index; let l =last">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p-2">
+                        <div class="card border-primary">
+                            <div class="edit_hover_class">
+                                <a class="pull-right p-2 cursor-pointer" (click)="deleteItem(item)">
+                                    <div class="dot">
+                                        <i class="fa fa-trash" aria-hidden="true"></i> 
+                                    </div>
+                                </a>
+                                <a class="pull-right p-2 cursor-pointer" (click)="editItem(item)">
+                                    <div class="dot">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <img class="card-img-top" [src]="transform(item.avatar)" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{item.name}}</h5>
+                                <small class="card-text">{{item.description}}</small>
+                            </div> 
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <small class="text-muted">{{item.createdAt | date:'medium'}}</small>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <span>&#x20B9;</span> {{item.price}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </ng-container>
+        </div>
+        </div>
+    </div>
+</div>

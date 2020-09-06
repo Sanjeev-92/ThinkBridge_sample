@@ -1,0 +1,28 @@
+.back{
+    background-color: white;
+}
+.edit_hover_class
+{
+    width:100%;
+    height:100%;
+    position: absolute;
+}
+
+.edit_hover_class a{
+visibility:hidden; 
+}
+.edit_hover_class:hover a {
+ visibility:visible;
+}
+.dot {
+    height: 35px;
+    width: 35px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 6px;
+  }
+  a{
+      cursor: pointer;
+  }

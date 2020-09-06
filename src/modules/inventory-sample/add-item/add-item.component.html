@@ -1,0 +1,50 @@
+<!-- main app container -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h3>Add Item</h3>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Item Name</label>
+                        <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required">Item Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="number" formControlName="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" />
+                        <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                            <div *ngIf="f.price.errors.required">price is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" formControlName="description" [ngClass]="{ 'is-invalid': submitted && f.description.errors }"></textarea>
+                        <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                            <div *ngIf="f.description.errors.required">Description is required</div>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group"> 
+                        <div class="custom-file">
+                            <input  formControlName="avatar" [ngClass]="{ 'is-invalid': submitted && f.avatar.errors }" type="file" (change)="onFileChange($event)" class="custom-file-input" id="validatedCustomFile" required>
+                            <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                            <div class="invalid-feedback">Invalid</div>
+                        </div>
+                        <div *ngIf="submitted && f.avatar.errors" class="invalid-feedback">
+                            <div *ngIf="f.avatar.errors.required">Invalid file</div>
+                        </div>
+                    </div> -->
+                    <div class="form-group">
+                        <div class="text-center">
+                            <button class="btn btn-primary">Add item</button>
+                           
+                        </div>
+                        <a href="javascript:void()" (click)="backToList()">Back to list</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
