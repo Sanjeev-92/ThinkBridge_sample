@@ -1,3 +1,46 @@
+# Sample curd operation for inventory
+
+This project is for sample curd operation with list and add page.
+
+To run tthis project you need to clone the project from github. i am sharing you the link form where you will get the project details
+.
+
+# Project link 
+
+ https://github.com/Sanjeev-92/ThinkBridge_sample
+
+Perquisites before running this project 
+
+1. Angular above version 8
+2. npm installed
+3. installed VsCode
+
+# How to run this project step wise
+
+Step 1- Clone this project from given link.
+
+Step 2- Naviagate to ThinkBridge_sample (cd ./ThinkBridge_sample/)
+
+Step 3- Type (code .) 
+
+Step 4- open vs code terminal and type (sudo npm i)
+
+Step 5- After that run (npm start)
+
+Step 6- Open any browser and type localhost:4200 in the search bar 
+
+step 7- 
+
+
+# Pending TASK to complete in this project
+
+1. Upload file to server.
+2. Make pages secure with credentials 
+3. Edit item 
+4. 
+
+    # I will enhance this project with time.
+
 # ThinkBridgeSample
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.

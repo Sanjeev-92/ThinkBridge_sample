@@ -10,16 +10,13 @@ import { AlertService } from 'ngx-alerts';
   styleUrls: ['./store-list.component.css'] 
 })
 export class StoreListComponent implements OnInit {
-  items:Array<object>;
-  constructor(
+  items:Array<object>; // Declaring variable to store values
+  constructor( // Listing common services 
     private baseService:BaseService,
     private router: Router,
     private sanitizer:DomSanitizer,
     private alertService: AlertService
   ) {
-    //this.numbers = Array(10).fill(Array(5).map((x,i)=>i)).map((x,i)=>i); // [0,1,2,3,4]
-    //this.numbers = Array(5).fill(4); // [4,4,4,4,4]
-    ///console.log("Numbers is",this.numbers);
   }
 
   ngOnInit() {
@@ -27,13 +24,13 @@ export class StoreListComponent implements OnInit {
   }
   getInventroryItems(id?:number){ // method to get all inventory items from DB
     this.baseService.get().subscribe((res)=>{
-      console.log("items are",res);
       if(res.status == 200){
         this.items =res.items;
       }else{
-
+        //TODO 
       }
     },(error)=>{
+      //TODO
     })
   }
   addItem(){
@@ -47,7 +44,7 @@ export class StoreListComponent implements OnInit {
           this.alertService.success(res.message)
         }
       },err=>{
-        console.log("Error");
+        console.log("Error"); 
       })
     }
   }
@@ -55,7 +52,7 @@ export class StoreListComponent implements OnInit {
    
   }
   details(items:Object){ //  Go to details page
-    console.log("Item",items);
+    console.log("Item",items); 
   }
   transform(image){
     return this.sanitizer.bypassSecurityTrustResourceUrl(image);

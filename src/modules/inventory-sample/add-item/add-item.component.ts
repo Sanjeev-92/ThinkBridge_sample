@@ -15,14 +15,14 @@ export class AddItemComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,private baseService:BaseService, private router: Router) { }
 
   ngOnInit() {
-      this.registerForm = this.formBuilder.group({
+      this.registerForm = this.formBuilder.group({ // Declaring form 
           name: ['', Validators.required],
           price: [, Validators.required],
           description: ['', [Validators.required, Validators.maxLength(500)]],
          // avatar:[File, [Validators.required]],
       });
   }
-  onFileChange(event) { 
+  onFileChange(event) {  // File change method 
     const reader = new FileReader();
 
     if (event.target.files && event.target.files.length) {
